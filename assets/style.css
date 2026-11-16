@@ -1,0 +1,144 @@
+---
+
+### 3. 網站基礎程式碼（直接複製建立即可）
+
+你可以直接在電腦建立一個資料夾 `calculus-notes`，將上面這份 `AGENTS.md` 放進去，接著建立以下 4 個檔案，就能直接打開瀏覽，或是直接把這些檔案交給 Cursor / Claude / ChatGPT 幫你繼續擴充。
+
+#### ① `assets/style.css`
+```css
+:root {
+  --primary: #1e3a8a;
+  --accent: #3b82f6;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+}
+
+header {
+  background: var(--primary);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+header a { color: white; text-decoration: none; }
+header p { color: #cbd5e1; margin-top: 0.5rem; }
+
+.container {
+  max-width: 860px;
+  margin: 2rem auto;
+  padding: 0 1.25rem;
+}
+
+/* 首頁卡片網格 */
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.lesson-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s, box-shadow 0.15s;
+  display: block;
+}
+
+.lesson-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08);
+  border-color: var(--accent);
+}
+
+.lesson-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.lesson-card h3 { margin: 0.4rem 0; color: var(--primary); }
+.lesson-card p { font-size: 0.92rem; color: var(--text-muted); }
+
+/* 講義內容樣式 */
+article.lesson-content {
+  background: var(--surface);
+  padding: 2.25rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+article h1 { color: var(--primary); font-size: 1.85rem; margin-bottom: 0.5rem; }
+article h2 { color: var(--primary); margin: 2rem 0 0.75rem; border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; }
+
+.box-definition, .box-formula, .box-example {
+  padding: 1.1rem 1.25rem;
+  margin: 1.25rem 0;
+  border-radius: 6px;
+}
+
+.box-definition {
+  background: #eff6ff;
+  border-left: 4px solid var(--accent);
+}
+
+.box-formula {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  text-align: center;
+}
+
+.box-example {
+  background: #f0fdf4;
+  border-left: 4px solid #16a34a;
+}
+
+.solution-toggle {
+  margin-top: 0.75rem;
+  background: #16a34a;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.solution-toggle:hover { background: #15803d; }
+
+.solution-content {
+  display: none;
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed #86efac;
+}
+
+.solution-content.open { display: block; }
+
+.lesson-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.lesson-nav a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
