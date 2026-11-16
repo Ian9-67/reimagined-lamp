@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 01: 極限與連續 | 微積分互動講義</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1><a href="../index.html">微積分互動講義與筆記</a></h1>
+  </header>
+
+  <main class="container">
+    <article class="lesson-content">
+      <span class="lesson-tag">Chapter 01</span>
+      <h1>極限與連續 (Limits and Continuity)</h1>
+      <p>極限是整個微積分的基石，用來描述當自變數 $x$ 無限趨近於某個數值 $c$ 時，函數 $f(x)$ 的變化趨勢。</p>
+
+      <h2>1. 極限的直觀定義</h2>
+      <div class="box-definition">
+        <strong>定義（函數的極限）：</strong><br>
+        若當 $x$ 從左右兩側充分靠近 $c$（但 $x \neq c$）時，$f(x)$ 的值會無限趨近於一個確定的實數 $L$，則稱當 $x$ 趨近於 $c$ 時，$f(x)$ 的極限為 $L$，記作：
+        $$\lim_{x \to c} f(x) = L$$
+      </div>
+
+      <h2>2. 重要極限公式</h2>
+      <div class="box-formula">
+        $$\lim_{x \to 0} \frac{\sin x}{x} = 1 \qquad , \qquad \lim_{x \to \infty} \left(1 + \frac{1}{x}\right)^x = e$$
+      </div>
+
+      <h2>3. 精選例題</h2>
+      <div class="box-example">
+        <strong>例題 1：求不定型極限</strong><br>
+        計算 $\lim_{x \to 2} \frac{x^2 - 4}{x - 2}$ 的值。
+        <br>
+        <button class="solution-toggle">顯示詳解</button>
+        <div class="solution-content">
+          直接代入 $x = 2$ 會得到 $\frac{0}{0}$ 的不定型，因此先對分子進行因式分解：
+          $$\lim_{x \to 2} \frac{x^2 - 4}{x - 2} = \lim_{x \to 2} \frac{(x - 2)(x + 2)}{x - 2}$$
+          因為 $x \to 2$ 代表 $x \neq 2$，可將 $(x - 2)$ 約分：
+          $$= \lim_{x \to 2} (x + 2) = 2 + 2 = 4$$
+        </div>
+      </div>
+
+      <div class="box-example">
+        <strong>例題 2：三角函數極限</strong><br>
+        計算 $\lim_{x \to 0} \frac{\sin(3x)}{x}$ 的值。
+        <br>
+        <button class="solution-toggle">顯示詳解</button>
+        <div class="solution-content">
+          利用重要極限公式 $\lim_{\theta \to 0} \frac{\sin \theta}{\theta} = 1$，將分子分母同乘以 $3$：
+          $$\lim_{x \to 0} \frac{\sin(3x)}{x} = \lim_{x \to 0} 3 \cdot \frac{\sin(3x)}{3x} = 3 \times 1 = 3$$
+        </div>
+      </div>
+    </article>
+
+    <nav class="lesson-nav">
+      <a href="../index.html">← 返回課程目錄</a>
+      <span></span>
+    </nav>
+  </main>
+</body>
+</html>
